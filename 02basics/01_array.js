@@ -1,4 +1,4 @@
-//Array
+//**Array
 
 const myArray = [0, 1, 5, 6, 8]
 const myHeros =["Ironman", "Hulk"]
@@ -8,7 +8,7 @@ const myArr2= new Array(1,2,3)
 
 //console.log(myArray[2])
 
-// Array Methods
+//** */ Array Methods
 
 // myArray.push(7)
 // myArray.pop()
@@ -25,7 +25,7 @@ const myArr2= new Array(1,2,3)
 // console.log(newArr)
 // console.log(myArray)
 
-// slice, splice
+// **slice, splice
 
 console.log("A", myArray)
 
