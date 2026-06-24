@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+<body style="background-color: #414141;  color: aliceblue;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" height="200px" id="photoshop" src="https://images.pexels.com/photos/29122139/pexels-photo-29122139.jpeg" alt="photoshop" ></li>
+            <li><img width="200px" height="200px" id="japan" src="https://images.pexels.com/photos/32659118/pexels-photo-32659118.jpeg" alt="" ></li>
+            <li><img width="200px" height="200px" id="river" src="https://images.pexels.com/photos/14942582/pexels-photo-14942582.jpeg" alt="" ></li>
+            <li><img width="200px" height="200px" id="owl" src="https://images.pexels.com/photos/13681325/pexels-photo-13681325.jpeg" alt=""></li>
+            <li><img width="200px" height="200px" id="prayer" src="https://images.pexels.com/photos/32785885/pexels-photo-32785885.jpeg" alt="" ></li>
+            <li ><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // ***********First approch*********
+//    document.getElementById('owl').onclick=function(){
+//     alert("Owl Clicked")
+//    }
+
+//attachEvent()
+// jQuery - onEvent
+
+// *************Topic Need to be studied**************
+// type , timeStamp, defaultPrevented
+// target, toElement, srcElement, currentTarget
+//clientX , clientY, screenX, screenY
+//altKey, ctrlKey, ShiftKey, keyCode
+
+
+// *************Best Approch***********
+// ***********Event Propagation*************
+
+
+// document.getElementById('images').addEventListener('click', function(e) {
+//     console.log("Clicked Inside the Ul");
+
+// },false)
+// document.getElementById('owl').addEventListener('click', function(e) {
+//     console.log("owl Clicked");  
+//     e.stopPropagation() 
+// },false)
+// document.getElementById('google').addEventListener('click', function (e) {
+//     console.log("Google Clicked");
+//     e.stopPropagation()
+//     e.preventDefault()
+// })
+
+document.getElementById('images').addEventListener('click', function (e) {
+    console.log(e.target.tagName);
+    if (e.target.tagName=== 'IMG') {
+        console.log(e.target.id);
+        
+        let removeIt=e.target.parentNode
+        removeIt.remove()
+    }
+    //removeIt.parentNode.removeChild(removeIt)
+})
+
+</script>
+</html>
